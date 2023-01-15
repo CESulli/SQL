@@ -1,0 +1,34 @@
+--Design a jewelry store database
+
+CREATE TABLE Rings (id INTEGER PRIMARY KEY, stone TEXT, metal TEXT, size INTEGER, weight INTEGER, price INTEGER);
+
+INSERT INTO Rings VALUES(1, "Opal", "Silver", 7, 1.5, 100);
+INSERT INTO Rings VALUES(2, "Diamond", "Gold", 7.5, 1.2, 500);
+INSERT INTO Rings VALUES(3, "CZ", "Tungsten", 10, 5.1, 300);
+INSERT INTO Rings VALUES(4, "Ruby", "Platinum", 7.5, 2.5, 1000);
+INSERT INTO Rings VALUES(5, "Emerald", "Gold", 6, 3.5, 500);
+INSERT INTO Rings VALUES(6, "Tanzanite", "Silver", 7, 2.5, 350);
+INSERT INTO Rings VALUES(7, "Opal", "Gold", 7, 1.5, 550);
+INSERT INTO Rings VALUES(8, "Diamond", "Silver", 6.5, 2.2, 700);
+INSERT INTO Rings VALUES(9, "Opal", "Silver", 7, 1.5, 400);
+INSERT INTO Rings VALUES(10, "Opal", "Gold", 7, 1.5, 150);
+INSERT INTO Rings VALUES(11, "Sapphire", "Silver", 6, 1.5, 500);
+INSERT INTO Rings VALUES(12, "Citrine", "Silver", 7, 1.5, 200);
+INSERT INTO Rings VALUES(13, "Turquoise", "Silver", 9, 1.5, 100);
+INSERT INTO Rings VALUES(14, "Garnet", "Silver", 8.5, 1.5, 100);
+INSERT INTO Rings VALUES(15, "Amethyst", "Silver", 5, 1.5, 100);
+
+--display the database ordered by price. 
+SELECT * FROM Rings
+ORDER BY price desc; 
+
+--what is the avg price of Opal rings? 
+SELECT AVG(price) "avg Opal price"
+FROM Rings
+where stone='Opal'; 
+
+--what are the top 5 heaviest rings? 
+SELECT stone, metal, price, weight
+FROM Rings
+order by weight desc
+limit 5; 
