@@ -1,0 +1,33 @@
+/* Create table about the people and what they do here */
+/*Singers: What songs did they write? Where are they from? */
+
+CREATE TABLE singers (singer_id INTEGER PRIMARY KEY, 
+name TEXT);
+
+INSERT INTO singers VALUES (1, "Frank Sinatra");
+INSERT INTO singers VALUES (2, "Mariah Carey");
+INSERT INTO singers VALUES (3, "Paul McCartney");
+
+
+CREATE TABLE songs (song_id INTEGER, title TEXT, singer_id INTEGER);
+
+INSERT INTO songs VALUES (1, "Jingle Bells", 1);
+INSERT INTO songs VALUES (2, "All I Want For Christmas Is You", 2);
+INSERT INTO songs VALUES (3, "Wonderul Christmastime", 3);
+INSERT INTO songs VALUES (4, "I'll Be Home For Christmas", 1);
+INSERT INTO songs VALUES (5, "Have Yourself A Merry Little Christmas", 1);
+INSERT INTO songs VALUES (6, "Christmas (Baby Please Come Home)", 2);
+INSERT INTO songs VALUES (7, "The Christmas Song", 3);
+INSERT INTO songs VALUES (8, "Silent Night", 2);
+INSERT INTO songs VALUES (9, "Santa Claus is Comin' to Town", 2);
+INSERT INTO songs VALUES (10, "The First Noel", 1);
+INSERT INTO songs VALUES (11, "Adeste Fideles", 1);
+INSERT INTO songs VALUES (12, "The Christmas Waltz", 1);
+
+CREATE TABLE hometowns (hometown_id INTEGER, hometown TEXT, singer_id INTEGER);
+
+INSERT INTO hometowns VALUES (1, "Hoboken", 1);
+INSERT INTO hometowns VALUES (2, "New York", 2);
+INSERT INTO hometowns VALUES (3, "Liverpool", 3);
+
+SELECT singers.name, hometowns.hometown FROM singers JOIN hometowns  ON singers.singer_id = hometowns.hometown_id; 
